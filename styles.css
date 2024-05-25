@@ -21,6 +21,10 @@ body, div, ul, nav, header, footer, a, li, label {
     align-items: center;
     container-type: inline-size;
     container-name: header;
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    font-size: 1.5rem;
 }
 
 .header__open-nav-button {
@@ -115,7 +119,7 @@ body, div, ul, nav, header, footer, a, li, label {
     flex-direction: column;
     justify-content: center;
     background-color: #fff;
-    max-width: 1200px;
+    max-width: 1250px;
     margin: auto;
 }
 
@@ -128,7 +132,6 @@ body, div, ul, nav, header, footer, a, li, label {
 .profile__img-container {
     max-height: 550px;
     overflow: hidden;
-
 }
 
 .profile__img {
@@ -136,12 +139,14 @@ body, div, ul, nav, header, footer, a, li, label {
     width: 450px;
 }
 
-h1, h2, h3, h4 {
+.profile h1, h2, h3, h4 {
     color: #26a;
 }
 
 .profile__skills-container {
     color: #26a;
+    width: 100%;
+    max-width: 500px;
 }
 
 .profile__skill {
@@ -203,10 +208,11 @@ h1, h2, h3, h4 {
     .profile__data-container {
         background-color: #fff;
         display: flex;
+        flex-direction: column; /* Check*/
         align-items: center;
         border-radius: 0px 25px 25px 0px;
-        box-shadow: 0px 0px 9px #0002;
-    }
+        box-shadow: 0px 0px 9px #0002;        
+}
 
     h1, h2 {
         margin-top: 0;
@@ -221,6 +227,7 @@ h1, h2, h3, h4 {
     .profile__img-container {
         max-height: initial;
         border-radius: 25px 0px 0px 25px;
+        background-color: #222;
     }
 
     .profile__img {
@@ -228,5 +235,79 @@ h1, h2, h3, h4 {
         width: 450px;
         object-fit: cover;
     }
-
 }
+
+/* --------------- PORTFILE ENDS ----------------- */
+
+/* --------------- PORTFOLIO SECTION ----------------- */
+
+.portfolio {
+    background-color: #222;
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    container-name: portfolio;
+    container-type: inline-size;
+}
+
+.portfolio h2 {
+color: #fff;
+}
+
+.portfolio__title{
+    font-size: 3rem;
+}
+.portfolio__project-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    max-width: 1300;
+    margin: auto;
+    width: 100%;
+    gap: 12px;
+    padding: 12px;
+    min-height: 80vh;
+}
+
+.portfolio__project{
+    background-image:linear-gradient(#0009, #0009), url("img/ewok.jpg");
+    background-position: center;
+    background-size: cover;
+    display: grid;
+    place-content: center;
+}
+
+.portfolio__project:hover {
+    opacity: 0.74;
+    outline: 2px solid #fff7;
+}
+/* --------------- PORTFOLIO QUERIES ----------------- */
+@container portfolio (min-width: 56.25rem){
+    .portfolio__project-container{
+        grid-template-columns:repeat(auto-fill, minmax(400px,1fr));
+    }
+
+    .portfolio__project:first-child{
+        grid-column: span 2;
+    }
+
+    .portfolio__project:nth-child(6){
+        grid-column: span 24;
+    }
+}
+@container portfolio (min-width: 81.25rem){
+    .portfolio__project-container{
+        grid-template-columns:repeat(auto-fill, minmax(300px,1fr));
+    }
+
+    .portfolio__project:first-child{
+        grid-column: span 2;
+        grid-row: span 2;
+    }
+
+    .portfolio__project:nth-child(6){
+        grid-column: span 4;
+    }
+}
+/* --------------- PORTFOLIO ENDS ----------------- */
