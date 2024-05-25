@@ -126,24 +126,39 @@ body, div, ul, nav, header, footer, a, li, label {
 .profile__data-container {
     max-width: 600px;
     padding: 12px;
-    background-color: #fff;
+    background-color: #fff;    
 }
-
+.profile h1, h2 {   
+    margin-bottom: 15px; 
+    color: #26a;
+}
+/* ------- Imagen ---------*/
 .profile__img-container {
+    display: flex;
+    justify-content: center;
     max-height: 550px;
     overflow: hidden;    
 }
-
 .profile__img {
+    margin: auto;
+    display: block;
     max-width: 100%;
-    width: 450px;
+    height: auto;
 }
+/* ------- Titulo principal ---------*/
 
-.profile h1, h2, h3, h4 {
-    color: #26a;
+.profile__description{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    overflow: hidden;
+    margin-bottom: 40px;
 }
+/* ------- Skills ---------*/
 
 .profile__skills-container {
+    display: flex;
+    flex-direction: column;
     color: #26a;
     width: 100%;
     max-width: 500px;
@@ -152,7 +167,6 @@ body, div, ul, nav, header, footer, a, li, label {
 .profile__skill {
     list-style: none;
     display: flex;
-    margin: 10px;
     margin-left: 0;
     align-items: center;
 }
