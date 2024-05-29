@@ -78,7 +78,7 @@ body, div, ul, nav, header, footer, a, li, label {
     text-decoration: none;
 }
 
-.header__nav-item :is(:hover, :active) {
+.header__nav-item:is(:hover, :active) {
     text-decoration: underline;
 }
 
@@ -220,7 +220,7 @@ body, div, ul, nav, header, footer, a, li, label {
         flex-direction: row;
         padding: 20px;
         background-color: transparent;
-        height: 100vh;
+        height: auto;
         margin: auto;
     }
 
